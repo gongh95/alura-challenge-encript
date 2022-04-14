@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    background: #23074d;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cc5333, #23074d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cc5333, #23074d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+h2 {
+    text-align: center;
+    margin: 1em 0;
+    font-size: 2em;
+}
+textarea {
+    resize: none;
+}
+img {
+    display: none; /* CAMBIAR DISPLAYcccc */
+}
+
+main .contenedor-encriptador {
+    max-width: 900px;
+    min-width: 300px;
+    border: 1px solid black;
+    background-color: #5a4dc3;
+    margin: 0 auto;
+    padding: .5em;
+}
+main .contenedor-encriptador p {
+    text-align: center;
+}
+main .contenedor-encriptador .btn {
+    text-align: center;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+main .contenedor-encriptador .texto-inicio, .texto-final {
+    display: block;
+    max-width: 600px;
+    min-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* FOOTER */
+
+footer .contenedor-footer {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(360deg, #00000091 50%, transparent 80%);
+    position: absolute;
+    bottom: 0;
+}
+
