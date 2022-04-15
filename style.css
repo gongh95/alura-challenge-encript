@@ -5,6 +5,8 @@
 }
 
 body {
+    color: #fff;
+    font-family: 'Metamorphous', cursive;
     font-size: 16px;
     background: #23074d;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #cc5333, #23074d);  /* Chrome 10-25, Safari 5.1-6 */
@@ -15,8 +17,9 @@ body {
 }
 h2 {
     text-align: center;
-    margin: 1em 0;
+    padding: 1em 0;
     font-size: 2em;
+    color: #e7f4fff0;
 }
 textarea {
     resize: none;
@@ -24,12 +27,27 @@ textarea {
 img {
     display: none; /* CAMBIAR DISPLAYcccc */
 }
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: currentColor;
+}
+a:link {
+    color: currentColor;
+}
+
+/* MAIN */
+
+main {
+    margin-bottom: 2em;
+}
 
 main .contenedor-encriptador {
     max-width: 900px;
     min-width: 300px;
-    border: 1px solid black;
-    background-color: #5a4dc3;
+    border-radius: 10px;
+    background-color: #5a4dc34a;
     margin: 0 auto;
     padding: .5em;
 }
@@ -40,7 +58,18 @@ main .contenedor-encriptador .btn {
     text-align: center;
     width: 250px;
     display: block;
-    margin: 0 auto;
+    margin: 0.5em auto;
+    padding: 0.6em;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #d7784a -200%, transparent);
+    transition: all .3s;
+    color: currentColor;
+}
+
+main .contenedor-encriptador .btn:hover {
+    box-shadow: inset 0px 0px 5px #23074d;
+    background-color: #d7784a;
 }
 
 main .contenedor-encriptador .texto-inicio, .texto-final {
@@ -49,15 +78,32 @@ main .contenedor-encriptador .texto-inicio, .texto-final {
     min-width: 300px;
     height: auto;
     margin: 0 auto;
+    color: #fff;
+    background-color: #00000021;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
 }
+
+main .contenedor-encriptador .texto-inicio::placeholder, .texto-final::placeholder {
+    color: #fff;
+}
+
 
 /* FOOTER */
 
 footer .contenedor-footer {
     width: 100%;
-    height: 300px;
+    height: 50vh;
     background: linear-gradient(360deg, #00000091 50%, transparent 80%);
-    position: absolute;
-    bottom: 0;
 }
 
+footer .contenedor-footer p {
+    text-align: center;
+}
+
+footer .contenedor-footer p a svg {
+    width: 25px;
+    height: auto;
+}
