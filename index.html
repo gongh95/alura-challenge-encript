@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Encriptador</title>
 </head>
 
@@ -20,14 +22,14 @@
     </header>
     <main>
         <div class="contenedor-encriptador">
-            <textarea class="texto-inicio" name="" id="" cols="30" rows="10"
+            <textarea class="texto-inicio" name="" id="texto-inicio" cols="30" rows="10"
                 placeholder="Ingrese el texto aquí"></textarea>
             <p>Solo letras minúsculas y sin acento.</p>
             <button class="btn encriptador" id="encriptador">Encriptar</button>
             <button class="btn desencriptador" id="desencriptador">Desencriptar</button>
-            <textarea class="texto-final" name="" id="" cols="30" rows="10"
+            <textarea class="texto-final" name="" id="texto-final" cols="30" rows="10"
                 placeholder="Ningún mensaje fue encontrado"></textarea>
-            <img src="" alt="Ilustracion cuando no hay texto">
+            <img id="img-cuando-no-hay-input" src="" alt="Ilustracion cuando no hay texto">
             <button class="btn copiar-texto" id="encriptador">Copiar texto</button>
         </div>
     </main>
@@ -42,7 +44,8 @@
                     </svg></a></p>
         </div>
     </footer>
-
+    
+    <script src="./app.js"></script>
 </body>
 
 </html>

@@ -73,6 +73,7 @@ main .contenedor-encriptador .btn:hover {
 }
 
 main .contenedor-encriptador .texto-inicio, .texto-final {
+    font-family: 'Roboto', sans-serif;
     display: block;
     max-width: 600px;
     min-width: 300px;
