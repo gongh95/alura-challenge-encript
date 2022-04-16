@@ -20,30 +20,21 @@ function pruebaPasoDos() {
     console.log(stringAEncriptar.includes("i"));
     console.log(stringAEncriptar.includes("o"));
     console.log(stringAEncriptar.includes("u"));
+    encriptarPrueba();
 }
 
-function encriptar() {
-    switch (stringAEncriptar.includes()) {
-        case "a":
-            stringEncriptado = stringAEncriptar.replace("a", "ai");
-            console.log(stringEncriptado);
-            break;
-        case "e":
-            stringEncriptado = stringAEncriptar.replace("e", "enter");
-            break;
-        case "i":
-            stringEncriptado = stringAEncriptar.replace("i", "imes");
-            break;
-        case "o":
-            stringEncriptado = stringAEncriptar.replace("o", "ober");
-            break;
-        case "u":
-            stringEncriptado = stringAEncriptar.replace("u", "ufat");
-            break;
-        default:
-            break;
+function encriptarPrueba() {
+    //if (stringAEncriptar.includes("a")) {
+    //    stringEncriptado = stringAEncriptar.replace("a","ai");
+    //}
+    for (let i = 0; i < stringAEncriptar.length; i++) {
+        if (stringAEncriptar.charAt(i) == "a") {
+            stringEncriptado = stringAEncriptar.replace("a","ai");
+        }
     }
+    return console.log("String encriptado: " + stringEncriptado);
 }
+
 //function encriptar() {}
 
 // Funcion de prueba
