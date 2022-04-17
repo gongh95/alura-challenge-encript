@@ -69,6 +69,7 @@ main .contenedor-encriptador {
 }
 main .contenedor-encriptador p {
     text-align: center;
+    font-family: sans-serif;
 }
 main .contenedor-encriptador .btn {
     text-align: center;
@@ -86,6 +87,9 @@ main .contenedor-encriptador .btn {
 main .contenedor-encriptador .btn:hover {
     box-shadow: inset 0px 0px 5px #23074d;
     background-color: #d7784a;
+    color: #1f131f; /* DISEÑO V2 */
+    letter-spacing: 1px; /* DISEÑO V2 */
+    text-shadow: 0px 0px 1px #490449; /* DISEÑO V2 */
 }
 
 main .contenedor-encriptador .texto-inicio, .texto-final {
