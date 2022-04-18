@@ -3,18 +3,27 @@ const textoInicio = document.getElementById("texto-inicio");
 const textoFinal = document.getElementById("texto-final");
 const encriptarBtn = document.getElementById("encriptador");
 const desencriptarBtn = document.getElementById("desencriptador");
+const copiarBtn = document.getElementById("copiar-texto");
 const imgCuandoInputVacio = document.getElementById("img-cuando-no-hay-input");
 // Declarar e inicializar variables
 let stringAEncriptar = "";
 let stringEncriptado = "";
-let contadorPrueba = 0;
+let arrayStringAEncriptar = [];
+let letraSacada = ""
 
-
-function prueba() {
-    stringAEncriptar = textoInicio.value;
+function stringAMinuscula() {
+    stringAEncriptar = stringAEncriptar.toLowerCase();
 }
+
+function extraerString() {
+    stringAEncriptar = textoInicio.value;
+    stringAMinuscula();
+}
+
+
+
 function pruebaPasoDos() {
-    prueba();
+    extraerString();
     textoInicio.value = ""; // Limpia textarea
     console.log("Tiene a: " + stringAEncriptar.includes("a"));
     console.log("Tiene e: " + stringAEncriptar.includes("e"));
@@ -24,16 +33,16 @@ function pruebaPasoDos() {
     encriptarPrueba();
 }
 
-function reemplazarVocal(vocal) {}
+
 
 function encriptarPrueba() {
     console.log("String entregado: " + stringAEncriptar);
     //if (stringAEncriptar.includes("a")) {
     //    stringEncriptado = stringAEncriptar.replace("a","ai");
     //}
-
     
     for (let i = 0; i < stringAEncriptar.length; i++) {
+        
         // if (stringAEncriptar.charAt(i) == "a") {
         //     stringAEncriptar.substring(i,i+1);
         //     console.log(stringAEncriptar);
@@ -88,9 +97,37 @@ function encriptarPrueba() {
                 stringEncriptado = stringAEncriptar.replaceAll("u", "ufat");
                 break;
             default:
-                console.log("caso default de switch");
+                console.log("(Consonante o caracter especial) caso default de switch");
                 break;
         }
+
+        // CON SWITCH CASE = FUNCIONA SOLO CON LA ULTIMA ESCRITA
+        // switch (stringAEncriptar.charAt(i)) {
+        //     case "a": {
+        //         stringEncriptado = stringAEncriptar.replaceAll("a", "ai");
+        //         continue;
+        //     }
+        //     case "e": {
+        //         stringEncriptado = stringAEncriptar.replaceAll("e", "enter");
+        //         break;
+        //     }
+        //     case "i": {
+        //         stringEncriptado = stringAEncriptar.replaceAll("i", "imes");
+        //         break;
+        //     }
+        //     case "o": {
+        //         stringEncriptado = stringAEncriptar.replaceAll("o", "ober");
+        //         break;
+        //     }
+        //     case "u": {
+        //         stringEncriptado = stringAEncriptar.replaceAll("u", "ufat");
+        //         break;
+        //     }
+        //     default: {
+        //         console.log("Consonante o caracter inválido");
+        //         break;
+        //     }
+        // }
 
 
         // CON IF Y ELSE IF = FUNCIONA CON LA MAS CERCANA A LA PRIMERA ("a")
@@ -114,16 +151,16 @@ function encriptarPrueba() {
     //stringEncriptado = "";
     textoFinal.value = stringEncriptado;
     //return console.log("String encriptado: " + stringEncriptado);
-    
 }
 
-//function encriptar() {}
-
-// Funcion de prueba
-function alertarTextoInicio() {
-    console.log(textoInicio.value); // Consologea valor de texto ingresado en primer textarea
-    textoInicio.value = "" // Limpia textarea
+function copiarTexto() {
+    textoFinal.focus();
+    textoFinal.select();
+    document.execCommand("copy"); // EN DESUSO!!
+    textoInicio.focus();
 }
 
 //encriptarBtn.onclick = alertarTextoInicio;
+
 encriptarBtn.onclick = pruebaPasoDos;
+copiarBtn.onclick = copiarTexto;
