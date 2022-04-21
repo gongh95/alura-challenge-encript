@@ -22,6 +22,7 @@ encriptarBtn.addEventListener('click', function () {
     textoInicio.value = ""; // limpia el text area
     encriptador();
     textoFinal.value = msjEncriptado; // pasar el texto codificado al segundo textarea
+    console.log(msjEncriptado);
 });
 
 // mediaquerty para evitar un focus en boton copiar
@@ -75,3 +76,64 @@ function codificar() {
     msjEncriptado = arrayDeMensaje.join("");
     arrayDeMensaje = [];
 };
+
+let msjDesencriptado;
+
+desencriptarBtn.addEventListener('click', function () {
+    textoFinal.value = ""; // limpiar segundo textarea siempre al principio
+    msjADesencriptar = textoInicio.value;
+    msjADesencriptar = msjADesencriptar.toLowerCase(); // se convierte todo a minúscula para no tener errores
+    //textoInicio.value = ""; // limpia el text area
+    decodificar();
+    textoFinal.value = msjDesencriptado; // pasar el texto codificado al segundo textarea
+});
+
+
+function decodificar() {
+    if (msjADesencriptar.includes("ai")) {
+        console.log("Esta frase incluye `ai`");
+        let quePasa = msjADesencriptar.replaceAll("ai", "a");
+        console.log(quePasa);
+    }
+    if (msjADesencriptar.includes("enter")) {
+        console.log("Esta frase incluye `enter`");
+        let quePasa1 = msjADesencriptar.replaceAll("enter", "e");
+        console.log(quePasa1);
+    }
+}
+
+
+// _________________________________________
+
+// let arrayDeMensajeDesencriptar = [];
+
+// function desencriptador() {
+//     for (let i = 0; i < msjADesencriptar.length; i++) {
+//         arrayDeMensajeDesencriptar.push(msjADesencriptar[i]);
+//     }
+//     decodificar();
+// }
+
+// function decodificar() {
+//     for (let i = 0; i < arrayDeMensajeDesencriptar.length; i++) {
+//         if (arrayDeMensajeDesencriptar[i] == "ai") {
+//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 2, "a");
+//         }
+//         if (arrayDeMensajeDesencriptar[i] == "enter") {
+//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 5, "e");
+//         }
+//         if (arrayDeMensajeDesencriptar[i] == "imes") {
+//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 4, "i");
+//         }
+//         if (arrayDeMensajeDesencriptar[i] == "ober") {
+//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 4, "o");
+//         }
+//         if (arrayDeMensajeDesencriptar[i] == "ufat") {
+//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 4, "u");
+//         }
+//     }
+//     console.log(arrayDeMensajeDesencriptar);
+
+//     msjDesencriptado = arrayDeMensajeDesencriptar.join("");
+//     arrayDeMensajeDesencriptar = [];
+// };
