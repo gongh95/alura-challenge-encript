@@ -11,6 +11,16 @@ let stringEncriptado = "";
 let arrayStringAEncriptar = [];
 let letraSacada = ""
 
+// "a", "ai"
+
+// "e", "enter"
+
+// "i", "imes"
+
+// "o", "ober"
+
+// "u", "ufat"
+
 function stringAMinuscula() {
     stringAEncriptar = stringAEncriptar.toLowerCase();
 }
