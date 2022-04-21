@@ -32,10 +32,12 @@ copiarBtn.addEventListener('click', function (e) {
     textoFinal.focus();
     textoFinal.select();
     document.execCommand("copy"); // EN DESUSO!!
-    modalTextoCopiado.classList.add("texto-copiado")
-    setTimeout(() => {
-        modalTextoCopiado.classList.remove("texto-copiado");
-    }, 1250);
+    if (!textoFinal.value == "") {
+        modalTextoCopiado.classList.add("texto-copiado")
+        setTimeout(() => {
+            modalTextoCopiado.classList.remove("texto-copiado");
+        }, 1250);
+    }
     textoInicio.focus();
 })
 
