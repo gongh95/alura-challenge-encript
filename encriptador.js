@@ -4,6 +4,7 @@ const textoFinal = document.getElementById("texto-final");
 const encriptarBtn = document.getElementById("encriptador");
 const desencriptarBtn = document.getElementById("desencriptador");
 const copiarBtn = document.getElementById("copiar-texto");
+const modalTextoCopiado = document.getElementById("texto-copiado");
 
 let msjEncriptado;
 //const msjAEncriptar = textoInicio.value;
@@ -25,10 +26,15 @@ encriptarBtn.addEventListener('click', function () {
 
 });
 
+// Listener de boton copiar
 copiarBtn.addEventListener('click', function () {
     textoFinal.focus();
     textoFinal.select();
     document.execCommand("copy"); // EN DESUSO!!
+    modalTextoCopiado.classList.add("texto-copiado")
+    setTimeout(() => {
+        modalTextoCopiado.classList.remove("texto-copiado");
+    }, 1250);
     textoInicio.focus();
 })
 

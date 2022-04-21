@@ -62,6 +62,7 @@ main {
 main .contenedor-encriptador {
     max-width: 900px;
     min-width: 300px;
+    height: 650px;
     border-radius: 10px;
     background-color: #5a4dc34a;
     margin: 0 auto;
@@ -112,6 +113,25 @@ main .contenedor-encriptador .texto-inicio::placeholder, .texto-final::placehold
     color: #fff;
 }
 
+main .contenedor-encriptador .texto-escondido {
+    width: 200px;
+    margin: 0 auto;
+    transition: all .2s;
+    position: relative;
+    opacity: 0;
+}
+main .contenedor-encriptador .texto-copiado {
+
+    transform: translateY(-160px);
+    width: 200px;
+    margin: 0 auto;
+    padding: 1em;
+    background: brown;
+    border-radius: 13px;
+    box-shadow: 0px 0px 10px #0000002e;
+    opacity: .8;
+    transition: all .5s;
+}
 
 /* FOOTER */
 
