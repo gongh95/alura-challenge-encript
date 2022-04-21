@@ -27,7 +27,8 @@ encriptarBtn.addEventListener('click', function () {
 });
 
 // Listener de boton copiar
-copiarBtn.addEventListener('click', function () {
+copiarBtn.addEventListener('click', function (e) {
+    e.preventDefault();
     textoFinal.focus();
     textoFinal.select();
     document.execCommand("copy"); // EN DESUSO!!
