@@ -7,7 +7,6 @@ const copiarBtn = document.getElementById("copiar-texto");
 const modalTextoCopiado = document.getElementById("texto-copiado");
 
 let msjEncriptado;
-//const msjAEncriptar = textoInicio.value;
 
 // Se consologea todo lo del primer input
 textoInicio.addEventListener("input", function () {
@@ -23,8 +22,10 @@ encriptarBtn.addEventListener('click', function () {
     textoInicio.value = ""; // limpia el text area
     encriptador();
     textoFinal.value = msjEncriptado; // pasar el texto codificado al segundo textarea
-
 });
+
+// mediaquerty para evitar un focus en boton copiar
+const mediaQuery = window.matchMedia("(max-width: 375px)");
 
 // Listener de boton copiar
 copiarBtn.addEventListener('click', function (e) {
@@ -38,7 +39,9 @@ copiarBtn.addEventListener('click', function (e) {
             modalTextoCopiado.classList.remove("texto-copiado");
         }, 1250);
     }
-    textoInicio.focus();
+    if (!mediaQuery.matches) { //evita el foco en textoInicio en version movil
+        textoInicio.focus();
+    }
 })
 
 let arrayDeMensaje = [];
