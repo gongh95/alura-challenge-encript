@@ -52,6 +52,7 @@ function encriptador() {
         arrayDeMensaje.push(msjAEncriptar[i]);
     }
     codificar();
+    msjAEncriptar="";
 }
 
 function codificar() {
@@ -81,8 +82,8 @@ let msjDesencriptado;
 
 desencriptarBtn.addEventListener('click', function () {
     textoFinal.value = ""; // limpiar segundo textarea siempre al principio
-    msjADesencriptar = textoInicio.value;
-    msjADesencriptar = msjADesencriptar.toLowerCase(); // se convierte todo a minúscula para no tener errores
+    msjAEncriptar = textoInicio.value;
+    msjAEncriptar = msjAEncriptar.toLowerCase(); // se convierte todo a minúscula para no tener errores
     //textoInicio.value = ""; // limpia el text area
     decodificar();
     textoFinal.value = msjDesencriptado; // pasar el texto codificado al segundo textarea
@@ -90,14 +91,14 @@ desencriptarBtn.addEventListener('click', function () {
 
 
 function decodificar() {
-    if (msjADesencriptar.includes("ai")) {
+    if (msjAEncriptar.includes("ai")) {
         console.log("Esta frase incluye `ai`");
-        let quePasa = msjADesencriptar.replaceAll("ai", "a");
+        let quePasa = msjAEncriptar.replaceAll("ai", "a");
         console.log(quePasa);
     }
-    if (msjADesencriptar.includes("enter")) {
+    if (msjAEncriptar.includes("enter")) {
         console.log("Esta frase incluye `enter`");
-        let quePasa1 = msjADesencriptar.replaceAll("enter", "e");
+        let quePasa1 = msjAEncriptar.replaceAll("enter", "e");
         console.log(quePasa1);
     }
 }
