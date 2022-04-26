@@ -96,10 +96,10 @@ main .contenedor-encriptador .btn:hover {
 
 /* BORRAR CUANDO FINALICE DESENCRIPTAR */
 
-#desencriptador:hover {
+/* #desencriptador:hover {
     background-color: #f10e0e;
     text-decoration: line-through;
-}
+} */
 
 main .contenedor-encriptador .texto-inicio, .texto-final {
     font-family: 'Roboto', sans-serif;
