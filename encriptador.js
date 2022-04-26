@@ -105,92 +105,36 @@ function reemplazar(aReemplazar, reemplazo, cadena) {
     let lugarDondeReemplazar; // declaracion de variable local
     lugarDondeReemplazar = cadena.search(aReemplazar); // indice del primer match de "aReemplazar"
     msjDesencriptado = cadena.replace(aReemplazar,reemplazo);
-    // return msjDesencriptado;
 }
 
 function decodificar() {
+    // Crédito a su autora https://github.com/maittee/sistema-de-encriptacion
+    //
+    msjDesencriptado = msjAEncriptar.replace(ai, "a");
+    msjDesencriptado = msjDesencriptado.replace(enter,"e");
+    msjDesencriptado = msjDesencriptado.replace(imes, "i");
+    msjDesencriptado = msjDesencriptado.replace(ober, "o");
+    msjDesencriptado = msjDesencriptado.replace(ufat, "u");
+    // 
+    // Crédito a su autora https://github.com/maittee/sistema-de-encriptacion
+
     if (msjAEncriptar.search(ai) == -1) { // si no hay nada para decodificar se copia el texto tal cual
         msjDesencriptado = msjAEncriptar;
     }
-    if (msjAEncriptar.search(ai) != -1) {
-        reemplazar(ai, "a", msjAEncriptar);
-    }
-    if (msjAEncriptar.search(enter) != -1) {
-        reemplazar(enter, "e", msjAEncriptar);
-    }
-        // reemplazar(enter, "e", msjAEncriptar);
-        // reemplazar(imes, "i", msjAEncriptar);
-        // reemplazar(ober, "o", msjAEncriptar);
-        // reemplazar(ufat, "u", msjAEncriptar);
-    // return msjDesencriptado;
-    // reemplazar(enter, "e", msjAEncriptar);
-    // reemplazar(imes, "i", msjAEncriptar);
-    // reemplazar(ober, "o", msjAEncriptar);
-    // reemplazar(ufat, "u", msjAEncriptar);
+    // NO FUNCIONA COMPLETAMENTE
+    // if (msjAEncriptar.search(ai) != -1) {
+    //     reemplazar(ai, "a", msjAEncriptar);
+    // }
+    // if (msjAEncriptar.search(enter) != -1) {
+    //     reemplazar(enter, "e", msjAEncriptar);
+    // }
+    // if (msjAEncriptar.search(imes) != -1) {
+    //     reemplazar(imes, "i", msjAEncriptar);
+    // }
+    // if (msjAEncriptar.search(ober) != -1) {
+    //     reemplazar(ober, "o", msjAEncriptar);
+    // }
+    // if (msjAEncriptar.search(ufat) != -1) {
+    //     reemplazar(ufat, "u", msjAEncriptar);
+    // }
 }
-
-// function decodificar() {
-//     if (msjAEncriptar.includes("ai")) {
-//         console.log("Incluye `ai`");
-//         msjDesencriptado = msjAEncriptar.replaceAll("ai","REEMPLAZO");
-//         console.log(msjDesencriptado);
-//         console.log(msjAEncriptar);
-//     }
-//     if (msjAEncriptar.includes("enter")) {
-//         console.log("Incluye `enter`");
-//         msjDesencriptado = msjAEncriptar.replaceAll("enter","REEMPLAZO");
-//         console.log(msjDesencriptado);
-//         console.log(msjAEncriptar);
-//     }
-//     if (msjAEncriptar.includes("imes")) {
-//         console.log(msjAEncriptar);
-//         console.log("Incluye `imes`");
-//         contieneImes = msjAEncriptar.match(imes);
-//         console.log(contieneImes);
-//         if (contieneImes) {
-//             console.log("Reemplazar todos los imes por i");
-//         }
-//     }
-//     if (msjAEncriptar.includes("ober")) {
-//         console.log(msjAEncriptar);
-//     }
-//     if (msjAEncriptar.includes("ufat")) {
-//         console.log(msjAEncriptar);
-//     }
-// }
-
-
-// _________________________________________
-
-// let arrayDeMensajeDesencriptar = [];
-
-// function desencriptador() {
-//     for (let i = 0; i < msjADesencriptar.length; i++) {
-//         arrayDeMensajeDesencriptar.push(msjADesencriptar[i]);
-//     }
-//     decodificar();
-// }
-
-// function decodificar() {
-//     for (let i = 0; i < arrayDeMensajeDesencriptar.length; i++) {
-//         if (arrayDeMensajeDesencriptar[i] == "ai") {
-//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 2, "a");
-//         }
-//         if (arrayDeMensajeDesencriptar[i] == "enter") {
-//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 5, "e");
-//         }
-//         if (arrayDeMensajeDesencriptar[i] == "imes") {
-//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 4, "i");
-//         }
-//         if (arrayDeMensajeDesencriptar[i] == "ober") {
-//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 4, "o");
-//         }
-//         if (arrayDeMensajeDesencriptar[i] == "ufat") {
-//             let cambioEnArray = arrayDeMensajeDesencriptar.splice(i, 4, "u");
-//         }
-//     }
-//     console.log(arrayDeMensajeDesencriptar);
-
-//     msjDesencriptado = arrayDeMensajeDesencriptar.join("");
-//     arrayDeMensajeDesencriptar = [];
-// };
