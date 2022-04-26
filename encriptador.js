@@ -1,11 +1,12 @@
 // Declaración de inputs, btns e img
-const textoInicio = document.getElementById("texto-inicio");
-const textoFinal = document.getElementById("texto-final");
-const encriptarBtn = document.getElementById("encriptador");
-const desencriptarBtn = document.getElementById("desencriptador");
-const copiarBtn = document.getElementById("copiar-texto");
-const modalTextoCopiado = document.getElementById("texto-copiado");
+const textoInicio = document.getElementById("texto-inicio"),
+    textoFinal = document.getElementById("texto-final"),
+    encriptarBtn = document.getElementById("encriptador"),
+    desencriptarBtn = document.getElementById("desencriptador"),
+    copiarBtn = document.getElementById("copiar-texto"),
+    modalTextoCopiado = document.getElementById("texto-copiado");
 
+let msjAEncriptar;
 let msjEncriptado;
 
 // Se consologea todo lo del primer input
@@ -18,11 +19,11 @@ encriptarBtn.addEventListener('click', function () {
     textoFinal.value = ""; // limpiar segundo textarea siempre al principio
     msjAEncriptar = msjAEncriptar.toLowerCase(); // se convierte todo a minúscula para no tener errores
     //let msjAEncriptar = textoInicio.value; 
-    console.log(msjAEncriptar); // consologea lo que se escribio en input (textarea)
+    console.log(`Mensaje a encriptar: "${msjAEncriptar}"`); // consologea lo que se escribio en input (textarea)
     textoInicio.value = ""; // limpia el text area
     encriptador();
     textoFinal.value = msjEncriptado; // pasar el texto codificado al segundo textarea
-    console.log(msjEncriptado);
+    console.log(`Mensaje encriptado: "${msjEncriptado}"`);
 });
 
 // mediaquerty para evitar un focus en boton copiar
@@ -78,30 +79,85 @@ function codificar() {
     arrayDeMensaje = [];
 };
 
+// Funciones y declaraciones para decodificar
 let msjDesencriptado;
+let contieneImes = false;
+// expresiones regulares para hacer match, search o test en decodificar
+const imes = new RegExp("imes","g","i"),
+    ai = new RegExp("ai","g","i"),
+    enter = new RegExp("enter","g","i"),
+    ober = new RegExp("ober","g","i"),
+    ufat = new RegExp("ufat","g","i");
 
 desencriptarBtn.addEventListener('click', function () {
     textoFinal.value = ""; // limpiar segundo textarea siempre al principio
     msjAEncriptar = textoInicio.value;
+    console.log(`Mensaje a desencriptar: "${msjAEncriptar}"`); // consologea lo que se escribio en input (textarea)
     msjAEncriptar = msjAEncriptar.toLowerCase(); // se convierte todo a minúscula para no tener errores
     //textoInicio.value = ""; // limpia el text area
     decodificar();
+    msjEncriptado = textoInicio.value;
     textoFinal.value = msjDesencriptado; // pasar el texto codificado al segundo textarea
+    console.log(`Mensaje desencriptado: "${msjDesencriptado}"`);
 });
 
+function reemplazar(aReemplazar, reemplazo, cadena) {
+    let lugarDondeReemplazar; // declaracion de variable local
+    lugarDondeReemplazar = cadena.search(aReemplazar); // indice del primer match de "aReemplazar"
+    msjDesencriptado = cadena.replace(aReemplazar,reemplazo);
+    // return msjDesencriptado;
+}
 
 function decodificar() {
-    if (msjAEncriptar.includes("ai")) {
-        console.log("Esta frase incluye `ai`");
-        let quePasa = msjAEncriptar.replaceAll("ai", "a");
-        console.log(quePasa);
+    if (msjAEncriptar.search(ai) == -1) { // si no hay nada para decodificar se copia el texto tal cual
+        msjDesencriptado = msjAEncriptar;
     }
-    if (msjAEncriptar.includes("enter")) {
-        console.log("Esta frase incluye `enter`");
-        let quePasa1 = msjAEncriptar.replaceAll("enter", "e");
-        console.log(quePasa1);
+    if (msjAEncriptar.search(ai) != -1) {
+        reemplazar(ai, "a", msjAEncriptar);
     }
+    if (msjAEncriptar.search(enter) != -1) {
+        reemplazar(enter, "e", msjAEncriptar);
+    }
+        // reemplazar(enter, "e", msjAEncriptar);
+        // reemplazar(imes, "i", msjAEncriptar);
+        // reemplazar(ober, "o", msjAEncriptar);
+        // reemplazar(ufat, "u", msjAEncriptar);
+    // return msjDesencriptado;
+    // reemplazar(enter, "e", msjAEncriptar);
+    // reemplazar(imes, "i", msjAEncriptar);
+    // reemplazar(ober, "o", msjAEncriptar);
+    // reemplazar(ufat, "u", msjAEncriptar);
 }
+
+// function decodificar() {
+//     if (msjAEncriptar.includes("ai")) {
+//         console.log("Incluye `ai`");
+//         msjDesencriptado = msjAEncriptar.replaceAll("ai","REEMPLAZO");
+//         console.log(msjDesencriptado);
+//         console.log(msjAEncriptar);
+//     }
+//     if (msjAEncriptar.includes("enter")) {
+//         console.log("Incluye `enter`");
+//         msjDesencriptado = msjAEncriptar.replaceAll("enter","REEMPLAZO");
+//         console.log(msjDesencriptado);
+//         console.log(msjAEncriptar);
+//     }
+//     if (msjAEncriptar.includes("imes")) {
+//         console.log(msjAEncriptar);
+//         console.log("Incluye `imes`");
+//         contieneImes = msjAEncriptar.match(imes);
+//         console.log(contieneImes);
+//         if (contieneImes) {
+//             console.log("Reemplazar todos los imes por i");
+//         }
+//     }
+//     if (msjAEncriptar.includes("ober")) {
+//         console.log(msjAEncriptar);
+//     }
+//     if (msjAEncriptar.includes("ufat")) {
+//         console.log(msjAEncriptar);
+//     }
+// }
 
 
 // _________________________________________
