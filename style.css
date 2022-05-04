@@ -107,7 +107,7 @@ main .contenedor-encriptador .texto-inicio, .texto-final {
     display: block;
     max-width: 600px;
     min-width: 300px;
-    height: auto;
+    height: 210px;
     margin: 0 auto;
     color: #fff;
     background-color: #00000021;
